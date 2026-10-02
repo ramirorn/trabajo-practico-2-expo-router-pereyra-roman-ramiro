@@ -5,7 +5,7 @@ Usa una **Cola** para los pedidos y una **Pila** para deshacer acciones del carr
 
 Hecha con Expo SDK 57, Expo Router y TypeScript.
 
-**Alumno:** Pereyra Roman, Ramiro Nicolás **Fecha de entrega:** ____________
+**Alumno:** Pereyra Roman, Ramiro Nicolás **Fecha de entrega:** 02/10/2026
 
 ---
 
