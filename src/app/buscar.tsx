@@ -61,7 +61,12 @@ export default function Buscar() {
       }
       renderItem={({ item }) => (
         <Link href={{ pathname: '/menu/[id]', params: { id: item.id } }} asChild>
-          <TarjetaPlato nombre={item.nombre} descripcion={item.descripcion} precio={item.precio} />
+          <TarjetaPlato
+            nombre={item.nombre}
+            descripcion={item.descripcion}
+            precio={item.precio}
+            imagen={item.imagen}
+          />
         </Link>
       )}
       ListEmptyComponent={<MensajeEstado mensaje="No hay platos que coincidan con la búsqueda." />}

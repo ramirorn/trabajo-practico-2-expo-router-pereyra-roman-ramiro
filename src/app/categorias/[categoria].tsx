@@ -32,7 +32,12 @@ export default function CategoriaPantalla() {
         keyExtractor={(plato) => String(plato.id)}
         renderItem={({ item }) => (
           <Link href={{ pathname: '/menu/[id]', params: { id: item.id } }} asChild>
-            <TarjetaPlato nombre={item.nombre} descripcion={item.descripcion} precio={item.precio} />
+            <TarjetaPlato
+              nombre={item.nombre}
+              descripcion={item.descripcion}
+              precio={item.precio}
+              imagen={item.imagen}
+            />
           </Link>
         )}
         ListFooterComponent={<DondeEstoy />}
