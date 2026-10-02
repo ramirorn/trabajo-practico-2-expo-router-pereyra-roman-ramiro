@@ -105,6 +105,10 @@ exp://10.254.198.119:8081/--/menu/5
 
 En una build propia, el mismo plato se abre con `comedoripf://menu/5`, y en web con `http://localhost:8081/menu/5`.
 
+## Créditos de imágenes
+
+Las fotos de los platos se cargan desde [Wikimedia Commons](https://commons.wikimedia.org) y tienen licencias libres (Creative Commons, GFDL o dominio público). Las URLs están en `src/data/platos.ts`.
+
 ## Respuestas de las Partes A a F
 
 Están en [RESPUESTAS.md](RESPUESTAS.md).
