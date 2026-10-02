@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
     borderRadius: radios.md,
     borderWidth: 1,
     borderColor: colores.borde,
+    // Franja verde institucional a la izquierda.
+    borderLeftWidth: 4,
+    borderLeftColor: colores.acento,
     flexDirection: 'row',
     alignItems: 'center',
     gap: espaciado.md,

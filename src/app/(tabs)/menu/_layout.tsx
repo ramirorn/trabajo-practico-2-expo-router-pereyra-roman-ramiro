@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router';
 
 import { colores } from '@/tema/colores';
+import { estiloHeader } from '@/tema/navegacion';
 
 // Si se entra directo a /menu/5 (desde Buscar o por URL), el listado queda debajo.
 export const unstable_settings = {
@@ -13,7 +14,7 @@ export default function LayoutMenu() {
   return (
     <Stack
       screenOptions={{
-        headerTintColor: colores.primario,
+        ...estiloHeader,
         contentStyle: { backgroundColor: colores.fondo },
       }}
     >

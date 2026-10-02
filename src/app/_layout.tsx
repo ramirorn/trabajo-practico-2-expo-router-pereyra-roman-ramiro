@@ -1,8 +1,10 @@
 import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { ComedorProvider, useComedor } from '@/context/ComedorContext';
 import { colores } from '@/tema/colores';
+import { estiloHeader } from '@/tema/navegacion';
 
 // DEFENSA: anchor dice qué pantalla queda "debajo" si se entra directo por un deep link.
 // Si alguien abre /categorias/bebidas, el Stack arma (tabs) abajo y "atrás" vuelve a las tabs.
@@ -14,6 +16,8 @@ export default function LayoutRaiz() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ComedorProvider>
+        {/* Íconos claros en la barra de estado porque el header es verde oscuro. */}
+        <StatusBar style="light" />
         <NavegacionRaiz />
       </ComedorProvider>
     </GestureHandlerRootView>
@@ -28,8 +32,7 @@ function NavegacionRaiz() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: colores.superficie },
-        headerTintColor: colores.primario,
+        ...estiloHeader,
         contentStyle: { backgroundColor: colores.fondo },
       }}
     >

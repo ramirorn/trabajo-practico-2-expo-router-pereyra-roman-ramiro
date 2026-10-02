@@ -1,12 +1,13 @@
 import { Stack } from 'expo-router';
 
 import { colores } from '@/tema/colores';
+import { estiloHeader } from '@/tema/navegacion';
 
 export default function LayoutCarrito() {
   return (
     <Stack
       screenOptions={{
-        headerTintColor: colores.primario,
+        ...estiloHeader,
         contentStyle: { backgroundColor: colores.fondo },
       }}
     >

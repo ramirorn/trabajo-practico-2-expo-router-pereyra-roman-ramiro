@@ -3,6 +3,7 @@ import { Tabs } from 'expo-router/js-tabs';
 
 import { useComedor } from '@/context/ComedorContext';
 import { colores } from '@/tema/colores';
+import { estiloHeader } from '@/tema/navegacion';
 
 export default function LayoutTabs() {
   const { cantidad, usuario } = useComedor();
@@ -11,9 +12,13 @@ export default function LayoutTabs() {
   return (
     <Tabs
       screenOptions={{
+        ...estiloHeader,
         tabBarActiveTintColor: colores.primario,
         tabBarInactiveTintColor: colores.textoSecundario,
-        headerTintColor: colores.primario,
+        tabBarStyle: { backgroundColor: colores.superficie, borderTopColor: colores.borde },
+        tabBarLabelStyle: { fontWeight: '600' },
+        // Verde institucional con texto blanco (contraste AA).
+        tabBarBadgeStyle: { backgroundColor: colores.exito, color: colores.textoSobrePrimario },
       }}
     >
       <Tabs.Screen

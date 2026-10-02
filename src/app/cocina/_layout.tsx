@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text } from 'react-native';
 
 import { useComedor } from '@/context/ComedorContext';
 import { colores, espaciado } from '@/tema/colores';
+import { estiloHeader } from '@/tema/navegacion';
 
 export default function LayoutCocina() {
   const { cerrarSesion } = useComedor();
@@ -10,8 +11,9 @@ export default function LayoutCocina() {
   return (
     <Drawer
       screenOptions={{
-        headerTintColor: colores.primario,
+        ...estiloHeader,
         drawerActiveTintColor: colores.primario,
+        drawerActiveBackgroundColor: colores.primarioSuave,
         // DEFENSA: al cerrar sesión el guard de cocina pasa a false y Expo Router saca
         // esta sección del historial solo; no hace falta router.back().
         headerRight: () => (
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: espaciado.md,
   },
   textoSalir: {
-    color: colores.primario,
+    color: colores.textoSobrePrimario, // el header es verde oscuro
     fontSize: 16,
     fontWeight: '600',
   },
