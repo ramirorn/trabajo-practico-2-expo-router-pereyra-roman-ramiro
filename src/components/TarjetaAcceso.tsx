@@ -19,7 +19,7 @@ export function TarjetaAcceso({ titulo, descripcion, icono, ...resto }: Props) {
       style={({ pressed }) => [styles.tarjeta, pressed && styles.presionado]}
     >
       <View style={styles.circulo}>
-        <Ionicons name={icono} size={26} color={colores.primario} />
+        <Ionicons name={icono} size={26} color={colores.acento} />
       </View>
       <View style={styles.textos}>
         <Text style={styles.titulo}>{titulo}</Text>
