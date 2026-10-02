@@ -1,0 +1,51 @@
+import { Link } from 'expo-router';
+import { StyleSheet, Text } from 'react-native';
+
+import { DondeEstoy } from '@/components/DondeEstoy';
+import { Pantalla } from '@/components/Pantalla';
+import { TarjetaAcceso } from '@/components/TarjetaAcceso';
+import { useComedor } from '@/context/ComedorContext';
+import { colores } from '@/tema/colores';
+
+export default function Inicio() {
+  const { usuario } = useComedor();
+
+  return (
+    <Pantalla scroll>
+      <Text style={styles.saludo}>¡Hola! Bienvenido al Comedor IPF</Text>
+      <Text style={styles.subtitulo}>¿Qué querés comer hoy?</Text>
+
+      {/* DEFENSA: usamos <Link> porque el usuario toca algo para ir a otra pantalla. */}
+      <Link href="/menu" asChild>
+        <TarjetaAcceso titulo="Menú" descripcion="Ver todos los platos" icono="restaurant" />
+      </Link>
+      <Link href="/buscar" asChild>
+        <TarjetaAcceso titulo="Buscar" descripcion="Encontrá un plato por nombre" icono="search" />
+      </Link>
+      <Link href="/ayuda" asChild>
+        <TarjetaAcceso titulo="Ayuda" descripcion="Horarios, pagos y turnos" icono="help-circle" />
+      </Link>
+      {/* Sin sesión, la tarjeta de cocina lleva al login. */}
+      <Link href={usuario !== null ? '/cocina' : '/login'} asChild>
+        <TarjetaAcceso
+          titulo="Cocina"
+          descripcion={usuario !== null ? 'Atender pedidos' : 'Ingresar como personal de cocina'}
+          icono="flame"
+        />
+      </Link>
+      <DondeEstoy />
+    </Pantalla>
+  );
+}
+
+const styles = StyleSheet.create({
+  saludo: {
+    color: colores.texto,
+    fontSize: 24,
+    fontWeight: '700',
+  },
+  subtitulo: {
+    color: colores.textoSecundario,
+    fontSize: 16,
+  },
+});
