@@ -13,8 +13,8 @@ export default function Confirmar() {
   function confirmar() {
     const pedido = confirmarPedido();
     // DEFENSA: usamos router (y no Link) porque navegamos DESPUÉS de una lógica.
-    // replace en vez de push: "atrás" no vuelve a esta confirmación; con push el usuario
-    // podría volver y confirmar el mismo pedido dos veces.
+    // replace en vez de push: el turno reemplaza a /confirmar en la pila, así "atrás"
+    // no vuelve a la confirmación de un pedido que ya se hizo.
     router.replace(`/turno/${pedido.numero}`);
   }
 

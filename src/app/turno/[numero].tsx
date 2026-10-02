@@ -30,9 +30,10 @@ export default function Turno() {
   if (listo) {
     contenido = <Text style={styles.listo}>¡Tu pedido está listo!</Text>;
   } else if (adelante >= 0) {
-    // Tiempo estimado = (adelante + 1) * 3: hay que esperar a los de adelante
-    // y también a que se prepare el propio pedido. Así nunca da 0 minutos.
-    const minutos = (adelante + 1) * MINUTOS_POR_PEDIDO;
+    // Tiempo estimado = posición * 3 minutos. La posición empieza en 1 (el del frente),
+    // así se cuentan los de adelante y también el propio pedido: nunca da 0 minutos.
+    const posicion = adelante + 1;
+    const minutos = posicion * MINUTOS_POR_PEDIDO;
     contenido = (
       <>
         <Text style={styles.texto}>Pedidos adelante: {adelante}</Text>

@@ -11,22 +11,21 @@ interface Props extends PressableProps {
 
 export function TarjetaAcceso({ titulo, descripcion, icono, ...resto }: Props) {
   // DEFENSA: igual que TarjetaPlato, se usa con <Link asChild>. Reenviamos {...resto}
-  // para que el onPress de Link llegue al Pressable, y el style es un objeto (no arreglo)
-  // porque Expo Router no acepta arreglos de estilos en el hijo de <Slot>.
+  // para que el onPress de Link llegue al Pressable.
   return (
-    <Pressable accessibilityRole="button" {...resto} style={styles.tarjeta}>
-      {({ pressed }) => (
-        <View style={[styles.contenido, pressed && styles.presionado]}>
-          <View style={styles.circulo}>
-            <Ionicons name={icono} size={26} color={colores.primario} />
-          </View>
-          <View style={styles.textos}>
-            <Text style={styles.titulo}>{titulo}</Text>
-            <Text style={styles.descripcion}>{descripcion}</Text>
-          </View>
-          <Ionicons name="chevron-forward" size={20} color={colores.textoSecundario} />
-        </View>
-      )}
+    <Pressable
+      accessibilityRole="button"
+      {...resto}
+      style={({ pressed }) => [styles.tarjeta, pressed && styles.presionado]}
+    >
+      <View style={styles.circulo}>
+        <Ionicons name={icono} size={26} color={colores.primario} />
+      </View>
+      <View style={styles.textos}>
+        <Text style={styles.titulo}>{titulo}</Text>
+        <Text style={styles.descripcion}>{descripcion}</Text>
+      </View>
+      <Ionicons name="chevron-forward" size={20} color={colores.textoSecundario} />
     </Pressable>
   );
 }
@@ -37,8 +36,6 @@ const styles = StyleSheet.create({
     borderRadius: radios.lg,
     borderWidth: 1,
     borderColor: colores.borde,
-  },
-  contenido: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: espaciado.md,

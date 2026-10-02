@@ -17,7 +17,7 @@ export const ARTICULOS_AYUDA: ArticuloAyuda[] = [
     ruta: ['pagos'],
     titulo: 'Formas de pago',
     contenido:
-      'Podés pagar en efectivo o con tarjeta de débito al retirar tu pedido. Elegí un tema para ver más detalles.',
+      'Podés pagar en efectivo o con tarjeta de débito al retirar tu pedido. En la ayuda hay un artículo para cada forma de pago.',
   },
   {
     ruta: ['pagos', 'efectivo'],

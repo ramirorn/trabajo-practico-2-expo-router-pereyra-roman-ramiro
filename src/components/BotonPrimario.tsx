@@ -6,7 +6,7 @@ interface Props {
   titulo: string;
   onPress?: () => void;
   deshabilitado?: boolean;
-  variante?: 'primario' | 'secundario' | 'peligro';
+  variante?: 'primario' | 'secundario';
 }
 
 export function BotonPrimario({ titulo, onPress, deshabilitado = false, variante = 'primario' }: Props) {
@@ -53,10 +53,6 @@ const styles = StyleSheet.create({
   secundario: {
     backgroundColor: colores.superficie,
     borderColor: colores.primario,
-  },
-  peligro: {
-    backgroundColor: colores.error,
-    borderColor: colores.error,
   },
   deshabilitado: {
     backgroundColor: colores.deshabilitado,

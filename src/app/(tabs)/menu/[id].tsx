@@ -30,7 +30,8 @@ export default function DetallePlato() {
   return (
     <Pantalla scroll>
       {/* El título del header es el nombre del plato (se configura desde la pantalla). */}
-      <Stack.Screen options={{ title: `${plato.nombre} (${tamanioPila})` }} />
+      <Stack.Screen options={{ title: plato.nombre }} />
+      <Text style={styles.pila}>Pantallas en la pila: {tamanioPila}</Text>
       <Text style={styles.nombre}>{plato.nombre}</Text>
       <Text style={styles.precio}>$ {plato.precio.toLocaleString('es-AR')}</Text>
       <Text style={styles.descripcion}>{plato.descripcion}</Text>
@@ -54,5 +55,8 @@ const styles = StyleSheet.create({
   descripcion: {
     color: colores.textoSecundario,
     fontSize: 16,
+  },
+  pila: {
+    color: colores.textoSecundario,
   },
 });
