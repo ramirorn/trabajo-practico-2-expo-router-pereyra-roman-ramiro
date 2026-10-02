@@ -13,7 +13,7 @@ export default function PedidoActual() {
 
   return (
     <Pantalla scroll>
-      <Text style={styles.texto}>Pedidos en espera: {enEspera.length}</Text>
+      <Text style={styles.texto}>Pedidos en la cola (contando este): {enEspera.length}</Text>
       {/* DEFENSA: pedidoActual es el frente de la Cola: el que llegó primero se atiende primero. */}
       {pedidoActual === undefined ? (
         <MensajeEstado mensaje="No hay pedidos para atender." />
