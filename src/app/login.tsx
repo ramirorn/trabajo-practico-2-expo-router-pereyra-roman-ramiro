@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput } from 'react-native';
 
 import { BotonPrimario } from '@/components/BotonPrimario';
 import { DondeEstoy } from '@/components/DondeEstoy';
+import { LogoIPF } from '@/components/LogoIPF';
 import { Pantalla } from '@/components/Pantalla';
 import { useComedor } from '@/context/ComedorContext';
 import { CLAVE_COCINA, USUARIO_COCINA } from '@/data/sesion';
@@ -24,6 +25,7 @@ export default function Login() {
 
   return (
     <Pantalla scroll>
+      <LogoIPF ancho={200} />
       <TextInput
         style={styles.input}
         value={usuario}

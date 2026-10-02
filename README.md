@@ -30,7 +30,7 @@ Escanear el QR con Expo Go, o presionar `w` para abrirla en el navegador.
 ```
 src/
   app/          solo rutas (cada archivo es una pantalla, cada _layout un navegador)
-  components/   componentes reutilizables (Pantalla, BotonPrimario, TarjetaPlato, DondeEstoy...)
+  components/   componentes reutilizables (Pantalla, BotonPrimario, TarjetaPlato, LogoIPF, DondeEstoy...)
   context/      ComedorContext: sesión, carrito, cola de pedidos y pilas
   data/         platos, artículos de ayuda y usuario de cocina
   estructuras/  clases Pila y Cola

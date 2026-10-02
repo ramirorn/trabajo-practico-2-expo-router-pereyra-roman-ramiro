@@ -2,6 +2,7 @@ import { Link } from 'expo-router';
 import { StyleSheet, Text } from 'react-native';
 
 import { DondeEstoy } from '@/components/DondeEstoy';
+import { LogoIPF } from '@/components/LogoIPF';
 import { Pantalla } from '@/components/Pantalla';
 import { TarjetaAcceso } from '@/components/TarjetaAcceso';
 import { useComedor } from '@/context/ComedorContext';
@@ -12,6 +13,7 @@ export default function Inicio() {
 
   return (
     <Pantalla scroll>
+      <LogoIPF />
       <Text style={styles.saludo}>¡Hola! Bienvenido al Comedor IPF</Text>
       <Text style={styles.subtitulo}>¿Qué querés comer hoy?</Text>
 
