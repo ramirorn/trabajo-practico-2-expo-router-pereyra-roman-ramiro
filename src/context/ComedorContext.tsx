@@ -87,7 +87,9 @@ export function ComedorProvider({ children }: { children: ReactNode }) {
   }
 
   function agregarAlCarrito(plato: Plato) {
-    const idItem = siguienteIdItem.current++;
+    // Primero leemos el valor y después lo incrementamos (en dos pasos, más claro que x.current++).
+    const idItem = siguienteIdItem.current;
+    siguienteIdItem.current += 1;
     setItems((anteriores) => [...anteriores, { idItem, plato }]);
     // DEFENSA: apilamos el idItem; el último agregado queda en el tope y es el primero en deshacerse.
     pilaDeshacer.current.push(idItem);
@@ -103,8 +105,10 @@ export function ComedorProvider({ children }: { children: ReactNode }) {
 
   // ---------- Pedidos ----------
   function confirmarPedido(): Pedido {
+    const numero = siguienteNumero.current;
+    siguienteNumero.current += 1;
     const pedido: Pedido = {
-      numero: siguienteNumero.current++,
+      numero,
       items,
       nota,
       total,
